@@ -38,7 +38,28 @@ def predict_disease(symptoms):
     return prediction
 
 # Streamlit app
-st.title("Medicine Recommendation System")
+st.title("DocBot AI 💻🤖")
+
+st.markdown(
+    """
+    <style>
+    html, body, [class*="css"]  {
+        font-size: 20px !important;
+    }
+    h1 {
+        font-size: 36px !important;
+    }
+    h2 {
+        font-size: 28px !important;
+    }
+    h3 {
+        font-size: 24px !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
 # Initialize session state for the prediction
 if "predicted_disease" not in st.session_state:
