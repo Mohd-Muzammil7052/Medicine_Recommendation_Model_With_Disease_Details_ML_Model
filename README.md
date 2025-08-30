@@ -69,8 +69,8 @@ DocBot AI uses multiple CSV files to store medical knowledge:
 Clone the repo and install dependencies:  
 
 ```bash
-git clone https://github.com/<your-username>/DocBot-AI.git
-cd DocBot-AI
+git clone https://github.com/Mohd-Muzammil7052/Medicine_Recommendation_Model_With_Disease_Details_ML_Model.git
+cd Medicine_Recommendation_Model_With_Disease_Details_ML_Model
 pip install -r requirements.txt
 ```
 
@@ -91,47 +91,41 @@ streamlit run app.py
 ## 🖥️ Usage
 
 1. Open the Streamlit app in your browser.
-2. Enter any webpage URL in the sidebar.
-3. Click "Load Webpage" to process and index the content.
-4. Start asking questions about the webpage in the chat input!
-
----
-
-## 📓 Jupyter Notebooks
-
-- basic_web_rag.ipynb → Shows how to perform RAG over a webpage using LangChain.
-+ basic_wikipedia_rag.ipynb → Demonstrates RAG over Wikipedia content.
-
-These notebooks provide a step-by-step breakdown of how RAG works without the Streamlit UI.
+2. Enter your symptoms (comma-separated). Example:
+   ```text
+   cough, fever, headache
+   ```
+3. Click Predict.
+4. Get:
+ * ✅ Predicted disease
+ * 📖 Description
+ * 💊 Medications
+ * 🛡️ Precautions
+ * 🥦 Diet plan
+ * 🧘 Workout suggestions
 
 ---
 
 ## 🛠️ Tech Stack
 
 * Streamlit → Web UI for chatbot.
-- LangChain → RAG pipeline.
-+ Groq LLMs → Fast inference models.
-* Hugging Face Transformers → Sentence embeddings.
-- FAISS → Vector similarity search.
+- Scikit-learn → ML model training & prediction
++ Pandas & NumPy → Data handling
+* Matplotlib & Seaborn → Data visualization
 
 ---
 
 ## 📌 Requirements
 
-See [requirements.txt](https://github.com/Mohd-Muzammil7052/Chat-With-WebPage/blob/main/requirements.txt) for all dependencies:
+See [requirements.txt](https://github.com/Mohd-Muzammil7052/Medicine_Recommendation_Model_With_Disease_Details_ML_Model/blob/main/requirements.txt) for all dependencies:
 
 ```text
-streamlit == 1.48.0
-python-dotenv == 1.1.1
-langchain == 0.3.27
-langchain-community == 0.3.27
-langchain-core == 0.3.74
-langchain-groq == 0.3.7
-langchain-huggingface == 0.3.1
-sentence-transformers == 5.1.0
-faiss-cpu == 1.12.0
-beautifulsoup4 == 4.13.5
-lxml == 6.0.1
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+streamlit
 ```
 
 ---
@@ -139,13 +133,21 @@ lxml == 6.0.1
 ## 🏗️ Project Structure  
 
 ```text
-📦 Chat-With-WebPage
- ┣ 📜 README.md                   # Documentation
- ┣ 📜 app.py                      # Streamlit chatbot app
- ┣ 📜 basic_web_rag.ipynb         # RAG with Webpages (Notebook)
- ┣ 📜 basic_wikipedia_rag.ipynb   # RAG with Wikipedia (Notebook)
- ┣ 📜 requirements.txt            # Project dependencies
- ┗ 📜 .env.example                # Example env file (create your own)
+📦 DocBot-AI
+ ┣ 📜 README.md            # Documentation
+ ┣ 📜 app.py               # Streamlit app
+ ┣ 📜 model.ipynb          # Notebook for training
+ ┣ 📜 requirements.txt     # Dependencies
+ ┣ 📜 model_svc.pkl        # Trained ML model
+ ┣ 📜 encoder.pkl          # Label encoder
+ ┣ 📜 description.csv      # Disease descriptions
+ ┣ 📜 diets.csv            # Diet recommendations
+ ┣ 📜 medications.csv      # Medications
+ ┣ 📜 precautions_df.csv   # Precautionary steps
+ ┣ 📜 symtoms_df.csv       # Symptoms dataset
+ ┣ 📜 Symptom-severity.csv # Symptom severity mapping
+ ┣ 📜 Training.csv         # Training dataset
+ ┗ 📜 workout_df.csv       # Workout suggestions
 ```
 
 ---
@@ -174,9 +176,9 @@ If you’d like to improve this project:
 
 Special thanks to the amazing open-source tools powering this project:  
 
-- [LangChain](https://www.langchain.com/)  
-- [Hugging Face](https://huggingface.co/)  
-- [Groq](https://groq.com/)  
+- [Scikit-Learn](https://scikit-learn.org/stable/)  
+- [Pandas](https://pandas.pydata.org/)  
+- [Numpy](https://numpy.org/)  
 - [Streamlit](https://streamlit.io/)  
 
 ---
